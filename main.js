@@ -14,7 +14,6 @@ let winds = document.querySelector("#wind");
 let feels = document.querySelector("#feels");
 let forecast = document.querySelector("#forecast");
 let humidity = document.querySelector("#humidity");
-// let degree = '&#176;'
 
 formSubmit.addEventListener("click", () => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${selectedCity.value},${selectedState.value}&appid=${apiKey}`)
