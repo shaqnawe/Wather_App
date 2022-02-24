@@ -1,10 +1,11 @@
 apiKey = '54b60381bd02063b8a2731d360b1a93f';
+// ID selectors for form
 const formSubmit = document.querySelector('#submitForm')
 let selectedCity = document.querySelector("#citySelector");
 let selectedState = document.querySelector("#stateSelector");
 let tempUnit = document.querySelector('#tempCategory')
-let cityList = document.querySelector('#cityList')
-// Card
+
+// ID selectors for Display Card
 let cityName1 = document.querySelector("#cityName");
 let current1 = document.querySelector("#currentTemp");
 let high1 = document.querySelector("#high");
@@ -42,50 +43,6 @@ formSubmit.addEventListener("click", () => {
             var tempMin = minTemp * 1.8 - 459.67;
             var feel = feelsLike * 1.8 - 459.67;
         }
-
-        // Create the elements to display
-        let temp = document.createElement("li");
-        temp.classList.add("form-control");
-        temp.innerText = `${Math.round(temperature)}`;
-        let city = document.createElement("h1");
-        city.classList.add("col-md-6");
-        city.innerText = `${cityName}`
-        let mxTempTitle = document.createElement("h1");
-        mxTempTitle.classList.add("col-md-6");
-        mxTempTitle.innerText = "High"
-        let mxTemp = document.createElement("li");
-        mxTemp.classList.add("form-control");
-        mxTemp.innerText = `${Math.round(tempMax)}`;
-        let mnTempTitle = document.createElement("h1");
-        mnTempTitle.classList.add("col-md-6");
-        mnTempTitle.innerText = "Low";
-        let mnTemp = document.createElement("li");
-        mnTemp.classList.add("form-control");
-        mnTemp.innerText = `${Math.round(tempMin)}`;
-        let feelTitle = document.createElement("h1");
-        feelTitle.classList.add("col-md-6");
-        feelTitle.innerText = "Feels Like";
-        let feels = document.createElement("li");
-        feels.classList.add("form-control");
-        feels.innerText = `${Math.round(feel)}`;
-        let forecast = document.createElement("h1");
-        forecast.classList.add("col-md-6");
-        forecast.innerText = "Forecast";
-        let fCast = document.createElement("li");
-        fCast.classList.add("form-control");
-        fCast.innerText = `${weather}`;
-        let humidityTitle = document.createElement("h1");
-        humidityTitle.classList.add("col-md-6");
-        humidityTitle.innerText = "Humidity";
-        let humid = document.createElement("li");
-        humid.classList.add("form-control");
-        humid.innerText = `${humidity}`;
-        let windTitle = document.createElement("h1");
-        windTitle.classList.add("col-md-6");
-        windTitle.innerText = "Wind Speed";
-        let winds = document.createElement("li");
-        winds.classList.add("form-control");
-        winds.innerText = `${wind} mph`;
         
         cityName1.innerText = `${cityName}`;
         console.log(temperature)
@@ -96,23 +53,8 @@ formSubmit.addEventListener("click", () => {
         forecast1.innerText = weather;
         wind1.innerText = `${wind} mph`;
         humidity1.innerText = humidity
-
-        // Add to list
-        cityList.appendChild(city);
-        cityList.appendChild(temp);
-        cityList.appendChild(mxTempTitle);
-        cityList.appendChild(mxTemp);
-        cityList.appendChild(mnTempTitle)
-        cityList.appendChild(mnTemp);
-        cityList.appendChild(feelTitle);
-        cityList.appendChild(feels)
-        cityList.appendChild(forecast);
-        cityList.appendChild(fCast);
-        cityList.appendChild(humidityTitle);
-        cityList.appendChild(humid);
-        cityList.appendChild(windTitle);
-        cityList.appendChild(winds);
-
+        
+        // Reset the form values
         selectedCity.value = ""
         selectedState.value= "" 
     });
