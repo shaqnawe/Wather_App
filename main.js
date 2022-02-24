@@ -6,14 +6,14 @@ let selectedState = document.querySelector("#stateSelector");
 let tempUnit = document.querySelector('#tempCategory')
 
 // ID selectors for Display Card
-let cityName1 = document.querySelector("#cityName");
-let current1 = document.querySelector("#currentTemp");
-let high1 = document.querySelector("#high");
-let low1 = document.querySelector("#low");
-let wind1 = document.querySelector("#wind");
-let feels1 = document.querySelector("#feels");
-let forecast1 = document.querySelector("#forecast");
-let humidity1 = document.querySelector("#humidity");
+let city = document.querySelector("#cityName");
+let currentTemp = document.querySelector("#currentTemp");
+let high = document.querySelector("#high");
+let low = document.querySelector("#low");
+let winds = document.querySelector("#wind");
+let feels = document.querySelector("#feels");
+let forecast = document.querySelector("#forecast");
+let humidity = document.querySelector("#humidity");
 // let degree = '&#176;'
 
 formSubmit.addEventListener("click", () => {
@@ -27,7 +27,7 @@ formSubmit.addEventListener("click", () => {
         let minTemp = data.main["temp_min"];
         let feelsLike = data.main["feels_like"];
         let wind = data.wind["speed"];
-        let humidity = data.main["humidity"];
+        let humidityInfo = data.main["humidity"];
         let weather = data.weather[0]["main"];
         
         // Calculate temp in Celcius or Farenheit
@@ -44,15 +44,14 @@ formSubmit.addEventListener("click", () => {
             var feel = feelsLike * 1.8 - 459.67;
         }
         
-        cityName1.innerText = `${cityName}`;
-        console.log(temperature)
-        current1.innerText = `${Math.round(temperature)}`;
-        high1.innerText = `${Math.round(tempMax)}`;
-        low1.innerText = `${Math.round(tempMin)}`;
-        feels1.innerText = `${Math.round(feel)}`;
-        forecast1.innerText = weather;
-        wind1.innerText = `${wind} mph`;
-        humidity1.innerText = humidity
+        city.innerText = `${cityName}`;
+        currentTemp.innerText = `${Math.round(temperature)}`;
+        high.innerText = `${Math.round(tempMax)}`;
+        low.innerText = `${Math.round(tempMin)}`;
+        feels.innerText = `${Math.round(feel)}`;
+        forecast.innerText = weather;
+        winds.innerText = `${wind} mph`;
+        humidity.innerText = humidityInfo;
         
         // Reset the form values
         selectedCity.value = ""
